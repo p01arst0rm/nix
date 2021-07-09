@@ -41,7 +41,7 @@ option(
 #============================================================================
 
 option(
-    'with_gc',
+    'enable_gc',
     type : 'boolean',
     value : 'true',
     description : 'Build nix with Boehm garbage collector')

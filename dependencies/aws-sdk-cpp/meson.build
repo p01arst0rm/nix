@@ -19,10 +19,6 @@ if get_option('with_s3')
             dependency('aws-cpp-sdk-s3'),
             dependency('aws-cpp-sdk-transfer')])
 
-    config_h.set(
-        'ENABLE_S3', 1,
-        description : 'Whether to enable S3 support via aws-sdk-cpp.')
-
     if has_s3client
         config_h.set(
             'HAVE_AWS_S3_S3CLIENT_H', 1,

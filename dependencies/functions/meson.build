@@ -1,60 +1,31 @@
 # nix check functions
 #============================================================================
 
-if (cpp.has_function('lutimes'))
-    config_h.set(
-        'HAVE_LUTIMES', 1,
-        description : 'Define to 1 if you have the `lutimes` function.')
-endif
 
-if (cpp.has_function('lchown'))
-    config_h.set(
-        'HAVE_LCHOWN', 1,
-        description : 'Define to 1 if you have the `lchown` function.')
-endif
+# check for required functions
+#--------------------------------------------------
+required_functions = [
+    'lutimes',
+    'lchown',
+    'pipe2',
+    'posix_fallocate',
+    'setresuid',
+    'setreuid',
+    'statvfs',
+    'strsignal',
+    'sysconf']
 
-if (cpp.has_function('pipe2'))
-    config_h.set(
-        'HAVE_PIPE2', 1,
-        description : 'Define to 1 if you have the `pipe2` function.')
-endif
+foreach f : required_functions
+  if cpp.has_function(f)
+    config.h.set(
+        'HAVE_@0@'.format(f.to_upper()), 1,
+        description : 'Define to 1 if you have the `@0@` function.'.format(f))
+  endif
+endforeach
 
-if (cpp.has_function('posix_fallocate'))
-    config_h.set(
-        'HAVE_POSIX_FALLOCATE', 1,
-        description : 'Define to 1 if you have the `posix_fallocate` function.')
-endif
 
-if (cpp.has_function('setresuid'))
-    config_h.set(
-        'HAVE_SETRESUID', 1,
-        description : 'Define to 1 if you have the `setresuid` function.')
-endif
-
-if (cpp.has_function('setreuid'))
-    config_h.set(
-        'HAVE_SETREUID', 1,
-        description : 'Define to 1 if you have the `setreuid` function.')
-endif
-
-if (cpp.has_function('statvfs'))
-    config_h.set(
-        'HAVE_STATVFS', 1,
-        description : 'Define to 1 if you have the `statvfs` function.')
-endif
-
-if (cpp.has_function('strsignal'))
-    config_h.set(
-        'HAVE_STRSIGNAL', 1,
-        description : 'Define to 1 if you have the `strsignal` function.')
-endif
-
-if (cpp.has_function('sysconf'))
-    config_h.set(
-        'HAVE_SYSCONF', 1,
-        description : 'Define to 1 if you have the `sysconf` function.')
-endif
-
+# compiler check for pubsetbuff
+#--------------------------------------------------
 pubsetbuff_c = '''
 #include <iostream>
 using namespace std;

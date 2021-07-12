@@ -78,4 +78,3 @@ install_headers(
 libcmd_dep = declare_dependency(
     link_with : libcmd_lib,
     include_directories : libcmd_inc)
-    

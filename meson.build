@@ -28,6 +28,10 @@ cpp = meson.get_compiler('cpp')
 add_project_arguments(get_option('cxxflags'), language : 'cpp')
 add_project_link_arguments(get_option('ldflags'), language: 'cpp')
 
+if(get_option('optimization') == '0')
+  add_project_arguments('-U_FORTIFY_SOURCE',language:['cpp','c'])
+  message('Disabling FORTIFY_SOURCE as optimization is set to 0')
+endif
 
 cmake = import('cmake')
 pkg = import('pkgconfig')

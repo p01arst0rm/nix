@@ -174,8 +174,9 @@ if can_link_symlink.to_int() == 1
     run_command('sh', '-c', 'rm tmp_link*')
 endif 
 
-config_h.set('CAN_LINK_SYMLINK', can_link_symlink,
-description : 'Whether link() works on symlinks')
+config_h.set(
+    'CAN_LINK_SYMLINK', can_link_symlink,
+    description : 'Whether link() works on symlinks')
 
 
 # OS Specific checks 

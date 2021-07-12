@@ -146,7 +146,6 @@ rm = find_program('rm', required : true)
 bash = find_program('bash', required : true)
 echo = find_program('echo', required : true)
 patch = find_program('patch', required : true)
-xmllint = find_program('xmllint', required : true)
 flex = find_program('flex', required : true)
 bison = find_program('bison', required : true)
 sed = find_program('sed', required : true)
@@ -185,10 +184,22 @@ config_h.set(
 
 # OS Specific checks 
 #============================================================================
+
+
+# freebsd requires _GNU_SOURCE flag
+#---------------------------------------------------
 if sys_name == 'freebsd'
     add_project_arguments('-D_GNU_SOURCE', language : 'cpp')
     config_h.set('_GNU_SOURCE', 1)  
 endif
+
+
+# Builing for Darwin requires XMLlint
+#---------------------------------------------------
+if sys_name == 'Darwin'
+    xmllint = find_program('xmllint', required : true)
+endif
+
 
 # Solaris requires -lsocket -lnsl for network functions 
 #---------------------------------------------------
@@ -202,7 +213,6 @@ endif
 
 # build
 #============================================================================
-
 
 
 proj_inc += include_directories('.')

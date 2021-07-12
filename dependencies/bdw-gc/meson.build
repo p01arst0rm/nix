@@ -2,14 +2,9 @@
 #============================================================================
 
 
-## FIXME !! Boehm is supposed to be an optional dependency
-## but is currently required for libexpr & libcmd to compile
-## correctly. 
-
-
 # Look for Boehm garbage collector, an optional dependency
 #--------------------------------------------------
-if get_option('with_gc')
+if get_option('enable_gc')
     gc_dep = dependency('bdw-gc')
 else
     gc_dep = dependency('', required: false)

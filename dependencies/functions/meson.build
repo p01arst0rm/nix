@@ -17,7 +17,7 @@ required_functions = [
 
 foreach f : required_functions
   if cpp.has_function(f)
-    config.h.set(
+    config_h.set(
         'HAVE_@0@'.format(f.to_upper()), 1,
         description : 'Define to 1 if you have the `@0@` function.'.format(f))
   endif

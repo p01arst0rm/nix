@@ -19,9 +19,9 @@ project_header_deps = [
     'inttypes.h',
     'memory.h']
 
-foreach f : required_functions
-  if cpp.has_function(f)
-    config.h.set(
+foreach f : project_header_deps
+  if cpp.has_header(f)
+    config_h.set(
         'HAVE_@0@'.format(f.to_upper().underscorify()), 1,
         description : 'Define to 1 if you have the `<@0@>` header file..'.format(f))
   endif
@@ -41,6 +41,6 @@ dirent_h_prefix = '''
 check_struct_dirent = meson.get_compiler('cpp').has_member(
     'struct dirent', 'd_type', prefix: dirent_h_prefix)
 
-if ((has_dirent_h) and (check_struct_dirent))
+if ((config_h.get('HAVE_DIRENT_H') == 1) and (check_struct_dirent))
   config_h.set('HAVE_STRUCT_DIRENT_D_TYPE', 1)
 endif

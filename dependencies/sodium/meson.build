@@ -5,7 +5,7 @@
 # it isn't listed anywhere on documentation that i could find. dependency
 # object needs to be added to meson.
 
-# look for libsodium, an required dependency
+# look for libsodium, a required dependency
 #--------------------------------------------------
 libsodium_dep = cpp.find_library('sodium')
 

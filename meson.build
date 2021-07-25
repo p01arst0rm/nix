@@ -10,7 +10,7 @@
 #-------------------------------------------------
 project(
     'nix',
-    ['cpp', 'rust'],
+    'cpp',
     meson_version : '>= 0.57.0',
     default_options : [
         'cpp_std=c++17',

@@ -2,6 +2,7 @@ Makefile.config
 perl/Makefile.config
 
 # /
+/build
 /aclocal.m4
 /autom4te.cache
 /precompiled-headers.h.gch

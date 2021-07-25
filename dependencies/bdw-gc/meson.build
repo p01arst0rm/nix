@@ -4,11 +4,7 @@
 
 # Look for Boehm garbage collector, an optional dependency
 #--------------------------------------------------
-if get_option('enable_gc')
-    gc_dep = dependency('bdw-gc')
-else
-    gc_dep = dependency('', required: false)
-endif
+gc_dep = dependency('bdw-gc', required: get_option('enable_gc'))
 
 
 config_h.set(

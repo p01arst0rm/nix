@@ -33,7 +33,8 @@ option(
         '-Wno-unused-parameter',
         '-Wno-variadic-macros',
         '-Wdeprecated-declarations',
-        '-Wno-missing-field-initializers'],
+        '-Wno-missing-field-initializers',
+    ],
     description : 'C build flags')
 
 
@@ -42,14 +43,14 @@ option(
 
 option(
     'enable_gc',
-    type : 'boolean',
-    value : 'true',
+    type : 'feature',
+    value : 'auto',
     description : 'Build nix with Boehm garbage collector')
 
 option(
     'with_s3',
-    type : 'boolean',
-    value : 'false',
+    type : 'feature',
+    value : 'auto',
     description : 'Build nix with s3')
 
 option(

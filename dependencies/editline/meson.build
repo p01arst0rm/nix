@@ -11,13 +11,16 @@
 
 editline_dep = cpp.find_library('editline')
 
-if (cpp.has_header('editline.h'))
-    config_h.set(
-        'HAVE_EDITLINE_H', 1,
-        description : 'Define to 1 if you have the <editline.h> header file.')
-else
+if not (
+    cpp.has_header(
+        'editline.h',
+        dependencies : editline_dep))
     error('Nix requires editline.h; however the header was not found.')
 endif
+
+config_h.set(
+    'HAVE_EDITLINE_H', 1,
+    description : 'Define to 1 if you have the <editline.h> header file.')
 
 if not (
     cpp.has_function(

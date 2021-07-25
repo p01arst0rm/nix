@@ -1,7 +1,6 @@
 # libmain build file
 #============================================================================
 
-libmain_dir = meson.current_source_dir()
 libmain_inc = []
 
 
@@ -14,25 +13,28 @@ libmain_dep_list = [
     libsodium_dep,
 
     libutil_dep,
-    libstore_dep]
+    libstore_dep,
+]
 
 
 # src files
 #============================================================================
 
 libmain_src = files(
-    join_paths(libmain_dir, 'common-args.cc'),
-    join_paths(libmain_dir, 'loggers.cc'),
-    join_paths(libmain_dir, 'progress-bar.cc'),
-    join_paths(libmain_dir, 'shared.cc'),
-    join_paths(libmain_dir, 'stack.cc'))
+    'common-args.cc',
+    'loggers.cc',
+    'progress-bar.cc',
+    'shared.cc',
+    'stack.cc',
+)
 
 
 libmain_headers = files(
-    join_paths(libmain_dir, 'common-args.hh'),
-    join_paths(libmain_dir, 'loggers.hh'),
-    join_paths(libmain_dir, 'progress-bar.hh'),
-    join_paths(libmain_dir, 'shared.hh'))
+    'common-args.hh',
+    'loggers.hh',
+    'progress-bar.hh',
+    'shared.hh',
+)
 
 
 # include directories

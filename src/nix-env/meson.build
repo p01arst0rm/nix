@@ -1,7 +1,6 @@
 # nix-env build file
 #============================================================================
 
-nix_env_dir = meson.current_source_dir()
 nix_env_inc = [include_directories('.')]
 
 
@@ -9,8 +8,9 @@ nix_env_inc = [include_directories('.')]
 #============================================================================
 
 nix_env_src = files(
-    join_paths(nix_env_dir, 'nix-env.cc'),
-    join_paths(nix_env_dir, 'user-env.cc'))
+    'nix-env.cc',
+    'user-env.cc',
+)
 
 # targets
 #============================================================================

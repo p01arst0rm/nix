@@ -1,7 +1,6 @@
 # libmain build file
 #============================================================================
 
-libcmd_dir = meson.current_source_dir()
 libcmd_inc = [include_directories('.')]
 
 
@@ -28,17 +27,19 @@ libcmd_dep_list = [
 #============================================================================
 
 libcmd_src = files(
-    join_paths(libcmd_dir, 'command.cc'),
-    join_paths(libcmd_dir, 'installables.cc'),
-    join_paths(libcmd_dir, 'legacy.cc'),
-    join_paths(libcmd_dir, 'markdown.cc'))
+    'command.cc',
+    'installables.cc',
+    'legacy.cc',
+    'markdown.cc',
+)
 
 
 libcmd_headers = files(
-    join_paths(libcmd_dir, 'command.hh'),
-    join_paths(libcmd_dir, 'installables.hh'),
-    join_paths(libcmd_dir, 'legacy.hh'),
-    join_paths(libcmd_dir, 'markdown.hh'))
+    'command.hh',
+    'installables.hh',
+    'legacy.hh',
+    'markdown.hh',
+)
 
 
 # build

@@ -1,7 +1,6 @@
 # resolve-system-dependencies build file
 #============================================================================
 
-resolvesysdeps_dir = meson.current_source_dir()
 resolvesysdeps_inc = [include_directories('.')]
 
 # dependancies
@@ -14,7 +13,8 @@ resolvesysdeps_dep_list = []
 #============================================================================
 
 resolvesysdeps_src = files(
-    join_paths(resolvesysdeps_dir, 'resolve-system-dependencies.cc'))
+    'resolve-system-dependencies.cc',
+)
 
 
 # build
@@ -37,4 +37,5 @@ resolvesysdeps_bin = executable(
     include_directories : proj_inc,
     cpp_args : resolvesysdeps_cxx_args,
     link_args : resolvesysdeps_link_args,
-    dependencies : resolvesysdeps_dep_list)
+    dependencies : resolvesysdeps_dep_list,
+)

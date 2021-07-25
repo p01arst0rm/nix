@@ -1,7 +1,6 @@
 # libfetchers build file
 #============================================================================
 
-libfetchers_dir =  meson.current_source_dir()
 libfetchers_inc = []
 
 # dependencies
@@ -18,29 +17,32 @@ libfetchers_dep_list = [
     sqlite3_dep,
 
     libutil_dep,
-    libstore_dep]
+    libstore_dep,
+]
 
 
 # src files
 #============================================================================
 
 libfetchers_src = files(
-    join_paths(libfetchers_dir, 'attrs.cc'),
-    join_paths(libfetchers_dir, 'cache.cc'),
-    join_paths(libfetchers_dir, 'fetchers.cc'),
-    join_paths(libfetchers_dir, 'git.cc'),
-    join_paths(libfetchers_dir, 'github.cc'),
-    join_paths(libfetchers_dir, 'indirect.cc'),
-    join_paths(libfetchers_dir, 'mercurial.cc'),
-    join_paths(libfetchers_dir, 'path.cc'),
-    join_paths(libfetchers_dir, 'registry.cc'),
-    join_paths(libfetchers_dir, 'tarball.cc'))
+    'attrs.cc',
+    'cache.cc',
+    'fetchers.cc',
+    'git.cc',
+    'github.cc',
+    'indirect.cc',
+    'mercurial.cc',
+    'path.cc',
+    'registry.cc',
+    'tarball.cc',
+)
 
 libfetchers_headers = files(
-    join_paths(libfetchers_dir, 'attrs.hh'),
-    join_paths(libfetchers_dir, 'cache.hh'),
-    join_paths(libfetchers_dir, 'fetchers.hh'),
-    join_paths(libfetchers_dir, 'registry.hh'))
+    'attrs.hh',
+    'cache.hh',
+    'fetchers.hh',
+    'registry.hh',
+)
 
 
 # include directories

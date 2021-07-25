@@ -1,7 +1,6 @@
 # libutil.tests build file
 #============================================================================
 
-libutil_tests_dir = meson.current_source_dir()
 libutil_tests_inc = [include_directories('.')]
 
 # dependancies
@@ -17,17 +16,18 @@ libutil_tests_dep_list = [
 #============================================================================
 
 libutil_tests_src = files(
-    join_paths(libutil_tests_dir, 'compression.cc'),
-    join_paths(libutil_tests_dir, 'config.cc'),
-    join_paths(libutil_tests_dir, 'hash.cc'),
-    join_paths(libutil_tests_dir, 'json.cc'),
-    join_paths(libutil_tests_dir, 'logging.cc'),
-    join_paths(libutil_tests_dir, 'lru-cache.cc'),
-    join_paths(libutil_tests_dir, 'main.cc'),
-    join_paths(libutil_tests_dir, 'pool.cc'),
-    join_paths(libutil_tests_dir, 'tests.cc'),
-    join_paths(libutil_tests_dir, 'url.cc'),
-    join_paths(libutil_tests_dir, 'xml-writer.cc'))
+    'compression.cc',
+    'config.cc',
+    'hash.cc',
+    'json.cc',
+    'logging.cc',
+    'lru-cache.cc',
+    'main.cc',
+    'pool.cc',
+    'tests.cc',
+    'url.cc',
+    'xml-writer.cc',
+)
 
 
 # build

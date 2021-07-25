@@ -1,7 +1,6 @@
 # libutil build file
 #============================================================================
 
-libutil_dir = meson.current_source_dir()
 libutil_inc = [include_directories('.')]
 
 
@@ -20,66 +19,68 @@ libutil_dep_list = [
     nlohmann_dep,
     openssl_dep,
     pthread_dep,
-    zlib_dep
-    ]
+    zlib_dep,
+]
 
 
 # src files
 #============================================================================
 
 libutil_src = files(
-    join_paths(libutil_dir, 'affinity.cc'),
-    join_paths(libutil_dir, 'archive.cc'),
-    join_paths(libutil_dir, 'args.cc'),
-    join_paths(libutil_dir, 'compression.cc'),
-    join_paths(libutil_dir, 'compute-levels.cc'),
-    join_paths(libutil_dir, 'config.cc'),
-    join_paths(libutil_dir, 'error.cc'),
-    join_paths(libutil_dir, 'hash.cc'),
-    join_paths(libutil_dir, 'json.cc'),
-    join_paths(libutil_dir, 'logging.cc'),
-    join_paths(libutil_dir, 'rust-ffi.cc'),
-    join_paths(libutil_dir, 'serialise.cc'),
-    join_paths(libutil_dir, 'tarfile.cc'),
-    join_paths(libutil_dir, 'thread-pool.cc'),
-    join_paths(libutil_dir, 'url.cc'),
-    join_paths(libutil_dir, 'util.cc'),
-    join_paths(libutil_dir, 'xml-writer.cc'))
+    'affinity.cc',
+    'archive.cc',
+    'args.cc',
+    'compression.cc',
+    'compute-levels.cc',
+    'config.cc',
+    'error.cc',
+    'hash.cc',
+    'json.cc',
+    'logging.cc',
+    'rust-ffi.cc',
+    'serialise.cc',
+    'tarfile.cc',
+    'thread-pool.cc',
+    'url.cc',
+    'util.cc',
+    'xml-writer.cc',
+)
 
 libutil_headers = files(
-    join_paths(libutil_dir, 'abstract-setting-to-json.hh'),
-    join_paths(libutil_dir, 'affinity.hh'),
-    join_paths(libutil_dir, 'ansicolor.hh'),
-    join_paths(libutil_dir, 'archive.hh'),
-    join_paths(libutil_dir, 'args.hh'),
-    join_paths(libutil_dir, 'callback.hh'),
-    join_paths(libutil_dir, 'comparator.hh'),
-    join_paths(libutil_dir, 'compression.hh'),
-    join_paths(libutil_dir, 'compute-levels.hh'),
-    join_paths(libutil_dir, 'config.hh'),
-    join_paths(libutil_dir, 'error.hh'),
-    join_paths(libutil_dir, 'finally.hh'),
-    join_paths(libutil_dir, 'fmt.hh'),
-    join_paths(libutil_dir, 'hash.hh'),
-    join_paths(libutil_dir, 'json.hh'),
-    join_paths(libutil_dir, 'logging.hh'),
-    join_paths(libutil_dir, 'lru-cache.hh'),
-    join_paths(libutil_dir, 'monitor-fd.hh'),
-    join_paths(libutil_dir, 'pool.hh'),
-    join_paths(libutil_dir, 'ref.hh'),
-    join_paths(libutil_dir, 'rust-ffi.hh'),
-    join_paths(libutil_dir, 'serialise.hh'),
-    join_paths(libutil_dir, 'split.hh'),
-    join_paths(libutil_dir, 'sync.hh'),
-    join_paths(libutil_dir, 'tarfile.hh'),
-    join_paths(libutil_dir, 'thread-pool.hh'),
-    join_paths(libutil_dir, 'topo-sort.hh'),
-    join_paths(libutil_dir, 'types.hh'),
-    join_paths(libutil_dir, 'url.hh'),
-    join_paths(libutil_dir, 'url-parts.hh'),
-    join_paths(libutil_dir, 'util.hh'),
-    join_paths(libutil_dir, 'xml-writer.hh'))
-    
+    'abstract-setting-to-json.hh',
+    'affinity.hh',
+    'ansicolor.hh',
+    'archive.hh',
+    'args.hh',
+    'callback.hh',
+    'comparator.hh',
+    'compression.hh',
+    'compute-levels.hh',
+    'config.hh',
+    'error.hh',
+    'finally.hh',
+    'fmt.hh',
+    'hash.hh',
+    'json.hh',
+    'logging.hh',
+    'lru-cache.hh',
+    'monitor-fd.hh',
+    'pool.hh',
+    'ref.hh',
+    'rust-ffi.hh',
+    'serialise.hh',
+    'split.hh',
+    'sync.hh',
+    'tarfile.hh',
+    'thread-pool.hh',
+    'topo-sort.hh',
+    'types.hh',
+    'url.hh',
+    'url-parts.hh',
+    'util.hh',
+    'xml-writer.hh',
+)
+
 
 # build
 #============================================================================

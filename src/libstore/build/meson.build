@@ -1,7 +1,6 @@
 # libstore.build build file
 #============================================================================
 
-libutil_build_dir = meson.current_source_dir()
 libstore_inc += include_directories('.')
 
 
@@ -9,22 +8,24 @@ libstore_inc += include_directories('.')
 #============================================================================
 
 libstore_src += files(
-    join_paths(libutil_build_dir, 'derivation-goal.cc'),
-    join_paths(libutil_build_dir, 'drv-output-substitution-goal.cc'),
-    join_paths(libutil_build_dir, 'entry-points.cc'),
-    join_paths(libutil_build_dir, 'goal.cc'),
-    join_paths(libutil_build_dir, 'hook-instance.cc'),
-    join_paths(libutil_build_dir, 'local-derivation-goal.cc'),
-    join_paths(libutil_build_dir, 'substitution-goal.cc'),
-    join_paths(libutil_build_dir, 'worker.cc'))
+    'derivation-goal.cc',
+    'drv-output-substitution-goal.cc',
+    'entry-points.cc',
+    'goal.cc',
+    'hook-instance.cc',
+    'local-derivation-goal.cc',
+    'substitution-goal.cc',
+    'worker.cc',
+)
 
 
 
 libstore_headers += files(
-    join_paths(libutil_build_dir, 'derivation-goal.hh'),
-    join_paths(libutil_build_dir, 'drv-output-substitution-goal.hh'),
-    join_paths(libutil_build_dir, 'goal.hh'),
-    join_paths(libutil_build_dir, 'hook-instance.hh'),
-    join_paths(libutil_build_dir, 'local-derivation-goal.hh'),
-    join_paths(libutil_build_dir, 'substitution-goal.hh'),
-    join_paths(libutil_build_dir, 'worker.hh'))
+    'derivation-goal.hh',
+    'drv-output-substitution-goal.hh',
+    'goal.hh',
+    'hook-instance.hh',
+    'local-derivation-goal.hh',
+    'substitution-goal.hh',
+    'worker.hh',
+)

@@ -1,7 +1,6 @@
 # nix-channel channel file
 #============================================================================
 
-nix_channel_dir = meson.current_source_dir()
 nix_channel_inc = [include_directories('.')]
 
 
@@ -9,7 +8,8 @@ nix_channel_inc = [include_directories('.')]
 #============================================================================
 
 nix_channel_src = files(
-    join_paths(nix_channel_dir, 'nix-channel.cc'))
+    'nix-channel.cc',
+)
 
 
 # targets

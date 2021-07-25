@@ -68,7 +68,8 @@ libexpr_inc += include_directories('.')
 #---------------------------------------------------
 libexpr_dirs = [
   'flake',
-  'primops']
+  'primops',
+]
 
 foreach dir : libexpr_dirs
     subdir(dir)
@@ -135,7 +136,8 @@ libexpr_lib = library(
     install_dir : libdir,
     include_directories : [
         libexpr_inc,
-        proj_inc],
+        proj_inc,
+    ],
     cpp_args : libexpr_cxx_args,
     link_args : libexpr_link_args,
     dependencies : libexpr_dep_list)

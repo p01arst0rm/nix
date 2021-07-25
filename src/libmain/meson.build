@@ -67,7 +67,8 @@ libmain_lib = library(
     install_dir : libdir,
     include_directories : [
         libmain_inc,
-        proj_inc],
+        proj_inc,
+    ],
     cpp_args : libmain_cxx_args,
     link_args : libmain_link_args,
     dependencies : libmain_dep_list)

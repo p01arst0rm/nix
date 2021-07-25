@@ -81,7 +81,8 @@ nix_src = files(
 #     [ bindir, 'nix-prefetch-url' ],
 #     [ bindir, 'nix-shell' ],
 #     [ bindir, 'nix-store' ],
-#     [ join_paths(libexecdir, 'nix'), 'build-remote' ]]
+#     [ join_paths(libexecdir, 'nix'), 'build-remote' ],
+#]
 
 
 # targets
@@ -116,7 +117,8 @@ nix_bin = executable(
         # nix_daemon_src,
         nix_env_src,
         nix_instantiate_src,
-        nix_store_src],
+        nix_store_src,
+    ],
     install : true,
     install_mode : 'rwxr-xr-x',
     install_dir : bindir,

@@ -101,7 +101,8 @@ libutil_lib = library(
     install_dir : libdir,
     include_directories : [
         libutil_inc,
-        proj_inc],
+        proj_inc
+    ],
     cpp_args : libutil_cxx_args,
     link_args : libutil_link_args,
     dependencies : libutil_dep_list)

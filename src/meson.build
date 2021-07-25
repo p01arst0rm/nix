@@ -17,7 +17,8 @@ src_dirs = [
   'nix-env',
   'nix-instantiate',
   'nix-store',
-  'nix']
+  'nix',
+]
 
 if sys_name == 'Darwin'
   src_dirs += 'resolve-system-dependencies'

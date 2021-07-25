@@ -115,7 +115,8 @@ libstore_data = files(
 
 libstore_dirs = [
     'build',
-    'builtins']
+    'builtins',
+]
 
 
 foreach dir : libstore_dirs
@@ -171,7 +172,8 @@ libstore_lib = library(
     install_dir : libdir,
     include_directories : [
         libstore_inc,
-        proj_inc],
+        proj_inc,
+    ],
     cpp_args : libstore_cxx_args,
     link_args : libstore_link_args,
     dependencies : libstore_dep_list)

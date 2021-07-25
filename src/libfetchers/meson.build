@@ -75,17 +75,20 @@ libfetchers_lib = library(
     install_dir : libdir,
     include_directories : [
         libfetchers_inc,
-        proj_inc],
+        proj_inc,
+    ],
     cpp_args : libfetchers_cxx_args,
     link_args : libfetchers_link_args,
-    dependencies : libfetchers_dep_list)
+    dependencies : libfetchers_dep_list,
+)
 
 
 # install headers
 #---------------------------------------------------
 install_headers(
     libfetchers_headers,
-    install_dir : join_paths(includedir, 'nix'))
+    install_dir : join_paths(includedir, 'nix'),
+)
 
 
 # generate pkg-config
@@ -106,4 +109,5 @@ libfetchers_config = pkg.generate(
 #---------------------------------------------------
 libfetchers_dep = declare_dependency(
     link_with : libfetchers_lib,
-    include_directories : libfetchers_inc)
+    include_directories : libfetchers_inc,
+)

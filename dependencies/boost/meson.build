@@ -7,7 +7,8 @@
 boost_mod_list = [
   'system',
   'context',
-  'thread']
+  'thread',
+]
 
 
 boost_dep = dependency(

@@ -47,12 +47,6 @@ option(
     description : 'Build nix with Boehm garbage collector')
 
 option(
-    'with_libsodium',
-    type : 'feature',
-    value : 'auto',
-    description : 'Build nix with libsodium')
-
-option(
     'with_s3',
     type : 'boolean',
     value : 'false',

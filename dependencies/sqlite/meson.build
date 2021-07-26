@@ -9,6 +9,8 @@ sqlite3_dep = declare_dependency(
     version : '>= 3.6.19')
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_SQLITE', 1,
     description : 'Define if the SQLite3 is available.')

@@ -8,5 +8,4 @@ nix_instantiate_inc = [include_directories('.')]
 #============================================================================
 
 nix_instantiate_src = files(
-    'nix-instantiate.cc',
-)
+    'nix-instantiate.cc')

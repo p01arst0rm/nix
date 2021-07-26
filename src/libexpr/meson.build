@@ -34,9 +34,7 @@ libexpr_src = files(
     'nixexpr.cc',
     'primops.cc',
     'value-to-json.cc',
-    'value-to-xml.cc',
-)
-
+    'value-to-xml.cc')
 
 libexpr_headers = files(
     'attr-path.hh',
@@ -53,8 +51,7 @@ libexpr_headers = files(
     'symbol-table.hh',
     'value.hh',
     'value-to-json.hh',
-    'value-to-xml.hh',
-)
+    'value-to-xml.hh')
 
 
 # include directories
@@ -69,8 +66,7 @@ libexpr_inc += include_directories('.')
 #---------------------------------------------------
 libexpr_dirs = [
   'flake',
-  'primops',
-]
+  'primops']
 
 foreach dir : libexpr_dirs
     subdir(dir)

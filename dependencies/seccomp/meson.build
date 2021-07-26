@@ -14,6 +14,8 @@ else
 endif
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_SECCOMP', 
     libseccomp_dep.found().to_int(),

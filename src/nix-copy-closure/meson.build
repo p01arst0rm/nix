@@ -8,5 +8,4 @@ nix_copy_closure_inc = [include_directories('.')]
 #============================================================================
 
 nix_copy_closure_src = files(
-    'nix-copy-closure.cc',
-)
+    'nix-copy-closure.cc')

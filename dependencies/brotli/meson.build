@@ -10,6 +10,8 @@ libbrotli_dep = declare_dependency(
         dependency('libbrotlidec')])
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_BROTLI', 1,
     description : 'Define if the brotli library is available.')

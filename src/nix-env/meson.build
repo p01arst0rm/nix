@@ -9,8 +9,7 @@ nix_env_inc = [include_directories('.')]
 
 nix_env_src = files(
     'nix-env.cc',
-    'user-env.cc',
-)
+    'user-env.cc')
 
 # targets
 #============================================================================

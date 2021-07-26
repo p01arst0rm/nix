@@ -13,15 +13,12 @@ libexpr_src += files(
     'config.cc',
     'flake.cc',
     'flakeref.cc',
-    'lockfile.cc',
-)
+    'lockfile.cc')
 
 libexpr_headers += files(
     'flake.hh',
     'flakeref.hh',
-    'lockfile.hh',
-)
-
+    'lockfile.hh')
 
 # targets
 #============================================================================

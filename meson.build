@@ -19,8 +19,7 @@ project(
         'debug=true'
     ],
     version : files('.version'),
-    license : 'MIT',
-)
+    license : 'MIT')
 
 
 # init compiler 

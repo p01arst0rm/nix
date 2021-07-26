@@ -17,8 +17,7 @@ libstore_dep_list = [
     pthread_dep,
     sqlite3_dep,
 
-    libutil_dep,
-]
+    libutil_dep]
 
 
 # src files
@@ -63,8 +62,7 @@ libstore_src = files(
     'ssh.cc',
     'ssh-store.cc',
     'store-api.cc',
-    'uds-remote-store.cc',
-)
+    'uds-remote-store.cc')
 
 libstore_headers = files(
     'binary-cache-store.hh',
@@ -102,15 +100,13 @@ libstore_headers = files(
     'ssh.hh',
     'store-api.hh',
     'uds-remote-store.hh',
-    'worker-protocol.hh',
-)
+    'worker-protocol.hh')
 
 
 libstore_data = files(
     'sandbox-defaults.sb',
     'sandbox-minimal.sb',
-    'sandbox-network.sb',
-)
+    'sandbox-network.sb')
 
 
 # include directories
@@ -118,8 +114,7 @@ libstore_data = files(
 
 libstore_dirs = [
     'build',
-    'builtins',
-]
+    'builtins']
 
 
 foreach dir : libstore_dirs
@@ -175,8 +170,7 @@ libstore_lib = library(
     install_dir : libdir,
     include_directories : [
         libstore_inc,
-        proj_inc,
-    ],
+        proj_inc],
     cpp_args : libstore_cxx_args,
     link_args : libstore_link_args,
     dependencies : libstore_dep_list)

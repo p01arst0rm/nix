@@ -8,8 +8,6 @@ build_remote_inc = [include_directories('.')]
 #============================================================================
 
 build_remote_src = files(
-    'build-remote.cc',
-)
-
+    'build-remote.cc')
 
 build_remote_headers = files()

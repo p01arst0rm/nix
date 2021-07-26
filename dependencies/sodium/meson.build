@@ -13,6 +13,8 @@
 libsodium_dep = cpp.find_library('sodium')
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_SODIUM', 1,
     description : 'Whether to use libsodium for cryptography.')

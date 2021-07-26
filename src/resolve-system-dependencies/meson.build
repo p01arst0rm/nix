@@ -13,8 +13,7 @@ resolvesysdeps_dep_list = []
 #============================================================================
 
 resolvesysdeps_src = files(
-    'resolve-system-dependencies.cc',
-)
+    'resolve-system-dependencies.cc')
 
 
 # build
@@ -37,5 +36,4 @@ resolvesysdeps_bin = executable(
     include_directories : proj_inc,
     cpp_args : resolvesysdeps_cxx_args,
     link_args : resolvesysdeps_link_args,
-    dependencies : resolvesysdeps_dep_list,
-)
+    dependencies : resolvesysdeps_dep_list)

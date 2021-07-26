@@ -10,10 +10,8 @@ libstore_inc += include_directories('.')
 libstore_src += files(
     'buildenv.cc',
     'fetchurl.cc',
-    'unpack-channel.cc',
-)
+    'unpack-channel.cc')
 
 
 libstore_headers += files(
-    'buildenv.hh',
-)
+    'buildenv.hh')

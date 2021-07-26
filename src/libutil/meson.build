@@ -43,9 +43,7 @@ libutil_src = files(
     'thread-pool.cc',
     'url.cc',
     'util.cc',
-    'xml-writer.cc',
-)
-
+    'xml-writer.cc')
 libutil_headers = files(
     'abstract-setting-to-json.hh',
     'affinity.hh',
@@ -78,9 +76,7 @@ libutil_headers = files(
     'url.hh',
     'url-parts.hh',
     'util.hh',
-    'xml-writer.hh',
-)
-
+    'xml-writer.hh')
 
 # build
 #============================================================================

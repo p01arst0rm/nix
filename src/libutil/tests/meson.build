@@ -26,9 +26,7 @@ libutil_tests_src = files(
     'pool.cc',
     'tests.cc',
     'url.cc',
-    'xml-writer.cc',
-)
-
+    'xml-writer.cc')
 
 # build
 #============================================================================

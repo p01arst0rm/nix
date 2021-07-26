@@ -8,5 +8,4 @@ nix_build_inc = [include_directories('.')]
 #============================================================================
 
 nix_build_src = files(
-    'nix-build.cc',
-)
+    'nix-build.cc')

@@ -7,6 +7,8 @@
 libbz2_dep = cpp.find_library('bz2')
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_BZ2', 1,
     description : 'Define if the libbz2 is available.')

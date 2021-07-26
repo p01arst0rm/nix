@@ -67,9 +67,7 @@ nix_src = files(
     'store-repair.cc',
     'upgrade-nix.cc',
     'verify.cc',
-    'why-depends.cc',
-)
-
+    'why-depends.cc')
 # nix_ln_src = [
 #     [ bindir, 'nix-build' ],
 #     [ bindir, 'nix-channel' ],

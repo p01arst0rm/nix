@@ -11,6 +11,9 @@ check_lzma_mt = cpp.has_function(
     'lzma_stream_encoder_mt',
     dependencies : liblzma_dep)
 
+
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_LZMA', 1,
     description : 'Define if the lzma library is available.')

@@ -17,8 +17,7 @@ libfetchers_dep_list = [
     sqlite3_dep,
 
     libutil_dep,
-    libstore_dep,
-]
+    libstore_dep]
 
 
 # src files
@@ -34,15 +33,13 @@ libfetchers_src = files(
     'mercurial.cc',
     'path.cc',
     'registry.cc',
-    'tarball.cc',
-)
+    'tarball.cc')
 
 libfetchers_headers = files(
     'attrs.hh',
     'cache.hh',
     'fetchers.hh',
-    'registry.hh',
-)
+    'registry.hh')
 
 
 # include directories
@@ -77,20 +74,17 @@ libfetchers_lib = library(
     install_dir : libdir,
     include_directories : [
         libfetchers_inc,
-        proj_inc,
-    ],
+        proj_inc],
     cpp_args : libfetchers_cxx_args,
     link_args : libfetchers_link_args,
-    dependencies : libfetchers_dep_list,
-)
+    dependencies : libfetchers_dep_list)
 
 
 # install headers
 #---------------------------------------------------
 install_headers(
     libfetchers_headers,
-    install_dir : join_paths(includedir, 'nix'),
-)
+    install_dir : join_paths(includedir, 'nix'))
 
 
 # generate pkg-config
@@ -111,5 +105,4 @@ libfetchers_config = pkg.generate(
 #---------------------------------------------------
 libfetchers_dep = declare_dependency(
     link_with : libfetchers_lib,
-    include_directories : libfetchers_inc,
-)
+    include_directories : libfetchers_inc)

@@ -8,5 +8,4 @@ nix_collect_garbage_inc = [include_directories('.')]
 #============================================================================
 
 nix_collect_garbage_src = files(
-    'nix-collect-garbage.cc',
-)
+    'nix-collect-garbage.cc')

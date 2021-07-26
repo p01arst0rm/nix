@@ -30,17 +30,13 @@ libcmd_src = files(
     'command.cc',
     'installables.cc',
     'legacy.cc',
-    'markdown.cc',
-)
-
+    'markdown.cc')
 
 libcmd_headers = files(
     'command.hh',
     'installables.hh',
     'legacy.hh',
-    'markdown.hh',
-)
-
+    'markdown.hh')
 
 # build
 #============================================================================

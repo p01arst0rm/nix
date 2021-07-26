@@ -16,11 +16,11 @@ required_functions = [
     'sysconf']
 
 foreach f : required_functions
-  if cpp.has_function(f)
-    config_h.set(
-        'HAVE_@0@'.format(f.to_upper()), 1,
-        description : 'Define to 1 if you have the `@0@` function.'.format(f))
-  endif
+    if cpp.has_function(f)
+        config_h.set(
+            'HAVE_@0@'.format(f.to_upper()), 1,
+            description : 'Define to 1 if you have the `@0@` function.'.format(f))
+    endif
 endforeach
 
 
@@ -34,11 +34,7 @@ void func() {
 cerr.rdbuf()->pubsetbuf(buf, sizeof(buf));
 }'''
 
-if meson.get_compiler('cpp').compiles(
-    pubsetbuff_c,
-    name : 'pubsetbuf'
-  )
-    config_h.set(
-        'HAVE_PUBSETBUF', 1,
-        description : 'Define to 1 if you have the `pubsetbuf` function.')
-endif
+check_pubsetbuff = meson.get_compiler('cpp').compiles(pubsetbuff_c, name : 'pubsetbuf')
+config_h.set(
+    'HAVE_PUBSETBUF', check_pubsetbuff.to_int(),
+    description : 'Define to 1 if you have the `pubsetbuf` function.')

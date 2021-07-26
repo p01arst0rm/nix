@@ -11,9 +11,7 @@ libexpr_src += files(
     'context.cc',
     'fetchMercurial.cc',
     'fetchTree.cc',
-    'fromTOML.cc',
-)
-
+    'fromTOML.cc')
 
 # targets
 #============================================================================

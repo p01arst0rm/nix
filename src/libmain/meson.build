@@ -13,8 +13,7 @@ libmain_dep_list = [
     libsodium_dep,
 
     libutil_dep,
-    libstore_dep,
-]
+    libstore_dep]
 
 
 # src files
@@ -25,16 +24,14 @@ libmain_src = files(
     'loggers.cc',
     'progress-bar.cc',
     'shared.cc',
-    'stack.cc',
-)
+    'stack.cc')
 
 
 libmain_headers = files(
     'common-args.hh',
     'loggers.hh',
     'progress-bar.hh',
-    'shared.hh',
-)
+    'shared.hh')
 
 
 # include directories
@@ -69,8 +66,7 @@ libmain_lib = library(
     install_dir : libdir,
     include_directories : [
         libmain_inc,
-        proj_inc,
-    ],
+        proj_inc],
     cpp_args : libmain_cxx_args,
     link_args : libmain_link_args,
     dependencies : libmain_dep_list)

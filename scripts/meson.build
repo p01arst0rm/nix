@@ -9,9 +9,7 @@ scripts_inc = [include_directories('.')]
 
 scripts_data = files(
     'install-darwin-multi-user.sh',
-    'install-multi-user.sh',
-)
-
+    'install-multi-user.sh')
 
 
 # targets

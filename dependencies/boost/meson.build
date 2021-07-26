@@ -7,8 +7,7 @@
 boost_mod_list = [
   'system',
   'context',
-  'thread',
-]
+  'thread']
 
 
 boost_dep = dependency(
@@ -16,6 +15,8 @@ boost_dep = dependency(
   modules: boost_mod_list)
 
 
+# set config variable(s)
+#--------------------------------------------------
 config_h.set(
     'HAVE_BOOST', 1,
     description : 'Define if the Boost library is available.')

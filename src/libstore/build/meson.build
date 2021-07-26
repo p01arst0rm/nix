@@ -15,8 +15,7 @@ libstore_src += files(
     'hook-instance.cc',
     'local-derivation-goal.cc',
     'substitution-goal.cc',
-    'worker.cc',
-)
+    'worker.cc')
 
 
 
@@ -27,5 +26,4 @@ libstore_headers += files(
     'hook-instance.hh',
     'local-derivation-goal.hh',
     'substitution-goal.hh',
-    'worker.hh',
-)
+    'worker.hh')

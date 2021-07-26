@@ -22,7 +22,7 @@ foreach dep : aws_sdk_cpp_dep_list
 endforeach
 
 
-# set config variables
+# set config variable(s)
 #--------------------------------------------------
 config_h.set(
     'ENABLE_S3',

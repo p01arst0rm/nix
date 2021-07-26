@@ -8,8 +8,7 @@ nix_channel_inc = [include_directories('.')]
 #============================================================================
 
 nix_channel_src = files(
-    'nix-channel.cc',
-)
+    'nix-channel.cc')
 
 
 # targets

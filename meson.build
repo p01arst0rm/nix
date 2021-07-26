@@ -10,15 +10,17 @@
 #-------------------------------------------------
 project(
     'nix',
-    ['cpp', 'rust'],
+    'cpp',
     meson_version : '>= 0.57.0',
     default_options : [
         'cpp_std=c++17',
         'warning_level=3',
         'optimization=3',
-        'debug=true'],
+        'debug=true'
+    ],
     version : files('.version'),
-    license : 'MIT')
+    license : 'MIT',
+)
 
 
 # init compiler 
@@ -226,8 +228,8 @@ project_dirs = [
     'scripts',
     #'misc',
     #'doc',
-    #'tests'
-    ]
+    #'tests',
+]
 
 
 foreach dir : project_dirs

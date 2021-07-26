@@ -1,7 +1,6 @@
 # Nix corepkgs build file
 #============================================================================
 
-scripts_dir = meson.current_source_dir()
 scripts_inc = [include_directories('.')]
 
 
@@ -9,8 +8,10 @@ scripts_inc = [include_directories('.')]
 #============================================================================
 
 scripts_data = files(
-    join_paths(scripts_dir, 'install-darwin-multi-user.sh'),
-    join_paths(scripts_dir, 'install-multi-user.sh'))
+    'install-darwin-multi-user.sh',
+    'install-multi-user.sh',
+)
+
 
 
 # targets

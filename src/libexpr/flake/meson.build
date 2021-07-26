@@ -10,15 +10,17 @@ libexpr_priomops_dir = meson.current_source_dir()
 libexpr_inc += include_directories('.')
 
 libexpr_src += files(
-    join_paths(libexpr_priomops_dir, 'config.cc'),
-    join_paths(libexpr_priomops_dir, 'flake.cc'),
-    join_paths(libexpr_priomops_dir, 'flakeref.cc'),
-    join_paths(libexpr_priomops_dir, 'lockfile.cc'))
+    'config.cc',
+    'flake.cc',
+    'flakeref.cc',
+    'lockfile.cc',
+)
 
 libexpr_headers += files(
-    join_paths(libexpr_priomops_dir, 'flake.hh'),
-    join_paths(libexpr_priomops_dir, 'flakeref.hh'),
-    join_paths(libexpr_priomops_dir, 'lockfile.hh'))
+    'flake.hh',
+    'flakeref.hh',
+    'lockfile.hh',
+)
 
 
 # targets

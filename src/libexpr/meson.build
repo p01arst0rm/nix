@@ -1,7 +1,6 @@
 # Nix lib expr build file
 #============================================================================
 
-libexpr_dir = meson.current_source_dir()
 libexpr_inc = proj_inc
 
 
@@ -24,36 +23,38 @@ libexpr_dep_list = [
 #============================================================================
 
 libexpr_src = files(
-    join_paths(libexpr_dir, 'attr-path.cc'),
-    join_paths(libexpr_dir, 'attr-set.cc'),
-    join_paths(libexpr_dir, 'common-eval-args.cc'),
-    join_paths(libexpr_dir, 'eval-cache.cc'),
-    join_paths(libexpr_dir, 'eval.cc'),
-    join_paths(libexpr_dir, 'function-trace.cc'),
-    join_paths(libexpr_dir, 'get-drvs.cc'),
-    join_paths(libexpr_dir, 'json-to-value.cc'),
-    join_paths(libexpr_dir, 'nixexpr.cc'),
-    join_paths(libexpr_dir, 'primops.cc'),
-    join_paths(libexpr_dir, 'value-to-json.cc'),
-    join_paths(libexpr_dir, 'value-to-xml.cc'))
+    'attr-path.cc',
+    'attr-set.cc',
+    'common-eval-args.cc',
+    'eval-cache.cc',
+    'eval.cc',
+    'function-trace.cc',
+    'get-drvs.cc',
+    'json-to-value.cc',
+    'nixexpr.cc',
+    'primops.cc',
+    'value-to-json.cc',
+    'value-to-xml.cc',
+)
 
 
 libexpr_headers = files(
-    join_paths(libexpr_dir, 'attr-path.hh'),
-    join_paths(libexpr_dir, 'attr-set.hh'),
-    join_paths(libexpr_dir, 'common-eval-args.hh'),
-    join_paths(libexpr_dir, 'eval-cache.hh'),
-    join_paths(libexpr_dir, 'eval.hh'),
-    join_paths(libexpr_dir, 'eval-inline.hh'),
-    join_paths(libexpr_dir, 'function-trace.hh'),
-    join_paths(libexpr_dir, 'get-drvs.hh'),
-    join_paths(libexpr_dir, 'json-to-value.hh'),
-    join_paths(libexpr_dir, 'nixexpr.hh'),
-    join_paths(libexpr_dir, 'primops.hh'),
-    join_paths(libexpr_dir, 'symbol-table.hh'),
-    join_paths(libexpr_dir, 'value.hh'),
-    join_paths(libexpr_dir, 'value-to-json.hh'),
-    join_paths(libexpr_dir, 'value-to-xml.hh'))
+    'attr-path.hh',
+    'attr-set.hh',
+    'common-eval-args.hh',
+    'eval-cache.hh',
+    'eval.hh',
+    'eval-inline.hh',
+    'function-trace.hh',
+    'get-drvs.hh',
+    'json-to-value.hh',
+    'nixexpr.hh',
+    'primops.hh',
+    'symbol-table.hh',
+    'value.hh',
+    'value-to-json.hh',
+    'value-to-xml.hh',
+)
 
 
 # include directories
@@ -68,7 +69,8 @@ libexpr_inc += include_directories('.')
 #---------------------------------------------------
 libexpr_dirs = [
   'flake',
-  'primops']
+  'primops',
+]
 
 foreach dir : libexpr_dirs
     subdir(dir)
@@ -135,7 +137,8 @@ libexpr_lib = library(
     install_dir : libdir,
     include_directories : [
         libexpr_inc,
-        proj_inc],
+        proj_inc,
+    ],
     cpp_args : libexpr_cxx_args,
     link_args : libexpr_link_args,
     dependencies : libexpr_dep_list)

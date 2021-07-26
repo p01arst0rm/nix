@@ -48,7 +48,7 @@ option(
     description : 'Build nix with Boehm garbage collector')
 
 option(
-    'with_s3',
+    'enable_s3',
     type : 'feature',
     value : 'auto',
     description : 'Build nix with s3')

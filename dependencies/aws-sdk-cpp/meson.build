@@ -5,9 +5,9 @@
 # Look for aws-cpp-sdk, an optional dependency
 #--------------------------------------------------
 s3_deps = [
-    dependency('aws-cpp-sdk-core', required: get_option('with_s3')),
-    dependency('aws-cpp-sdk-s3', required: get_option('with_s3')),
-    dependency('aws-cpp-sdk-transfer', required: get_option('with_s3'))
+    dependency('aws-cpp-sdk-core', required: get_option('enable_s3')),
+    dependency('aws-cpp-sdk-s3', required: get_option('enable_s3')),
+    dependency('aws-cpp-sdk-transfer', required: get_option('enable_s3'))
 ]
 
 have_s3 = true

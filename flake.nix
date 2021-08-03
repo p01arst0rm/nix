@@ -623,8 +623,8 @@
 
               # Needed for `meson` to pick up Boost.
               # https://github.com/NixOS/nixpkgs/issues/86131#issuecomment-620155616
-              export BOOST_INCLUDEDIR="${stdenv.lib.getDev boost}/include";
-              export BOOST_LIBRARYDIR="${stdenv.lib.getLib boost}/lib";
+              export BOOST_INCLUDEDIR="${lib.getDev boost}/include";
+              export BOOST_LIBRARYDIR="${lib.getLib boost}/lib";
             '';
         });
 

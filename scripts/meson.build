@@ -1,6 +1,7 @@
 # Nix corepkgs build file
 #============================================================================
 
+scripts_dir = meson.current_source_dir()
 scripts_inc = [include_directories('.')]
 
 

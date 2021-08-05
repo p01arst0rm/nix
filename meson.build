@@ -91,6 +91,7 @@ datadir = join_paths(prefix, get_option('datadir'))
 sysconfdir = join_paths(prefix, get_option('sysconfdir'))
 libexecdir = join_paths(prefix, get_option('libexecdir'))
 mandir = join_paths(prefix, get_option('mandir'))
+docdir = join_paths(prefix, get_option('docdir'))
 includedir = join_paths(prefix, get_option('includedir'))
 proj_inc = []
 
@@ -225,8 +226,8 @@ project_dirs = [
     'include',
     'src',
     'scripts',
+    'doc/manual',
     #'misc',
-    #'doc',
     #'tests',
 ]
 

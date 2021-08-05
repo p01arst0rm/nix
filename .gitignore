@@ -12,19 +12,6 @@ perl/Makefile.config
 /svn-revision
 /libtool
 
-# /doc/manual/
-/doc/manual/*.1
-/doc/manual/*.5
-/doc/manual/*.8
-/doc/manual/generated/*
-/doc/manual/nix.json
-/doc/manual/conf-file.json
-/doc/manual/builtins.json
-/doc/manual/src/SUMMARY.md
-/doc/manual/src/command-ref/new-cli
-/doc/manual/src/command-ref/conf-file.md
-/doc/manual/src/expressions/builtins.md
-
 # /scripts/
 /scripts/nix-profile.sh
 /scripts/nix-reduce-build

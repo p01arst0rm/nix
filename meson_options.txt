@@ -62,10 +62,22 @@ option(
 # misc
 #============================================================================
 option(
-    'disable_doc_gen',
+    'doc_generate',
     type : 'boolean',
     value : 'false',
-    description : 'disable documentation generation')
+    description : 'Build the documentation and manpages')
+
+option(
+    'mandir',
+    type : 'string',
+    value : 'share/man',
+    description : 'Man pages location path')
+
+option(
+    'docdir',
+    type : 'string',
+    value : 'share/doc',
+    description : 'Documentation location path')
 
 option(
     'build_shared_libs',

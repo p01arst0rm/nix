@@ -1,7 +1,10 @@
 # libutil build file
 #============================================================================
 
-libutil_inc = [include_directories('.')]
+libutil_inc = [include_directories(
+    '.',
+    join_paths('..'),
+)]
 
 
 # dependencies
@@ -16,7 +19,6 @@ libutil_dep_list = [
     libcpuid_dep,
     liblzma_dep,
     libsodium_dep,
-    nlohmann_dep,
     openssl_dep,
     pthread_dep,
     zlib_dep,

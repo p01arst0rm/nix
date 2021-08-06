@@ -15,7 +15,6 @@ required_dep_dirs = [
     'editline',
     'lzma',
     'lowdown',
-    'nlohmann',
     'openssl',
     'seccomp',
     'sqlite',

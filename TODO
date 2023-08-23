@@ -1,0 +1,10 @@
+
+
+Contrib/*
+maintainers/*
+misc/*
+mk/*
+perl/*
+tests/*
+thirdparty/*
+.dir-locals.el

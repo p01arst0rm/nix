@@ -496,37 +496,37 @@
 
             hardeningDisable = lib.optional stdenv.hostPlatform.isStatic "pie";
 
-            passthru.perl-bindings = with final; perl.pkgs.toPerlModule (currentStdenv.mkDerivation {
-              name = "nix-perl-${version}";
+            # passthru.perl-bindings = with final; perl.pkgs.toPerlModule (currentStdenv.mkDerivation {
+            #   name = "nix-perl-${version}";
 
-              src = self;
+              # src = self;
 
-              nativeBuildInputs =
-                [ buildPackages.autoconf-archive
-                  buildPackages.autoreconfHook
-                  buildPackages.pkg-config
-                ];
+              # nativeBuildInputs =
+              #   [ buildPackages.autoconf-archive
+              #     buildPackages.autoreconfHook
+              #     buildPackages.pkg-config
+              #   ];
 
-              buildInputs =
-                [ nix
-                  curl
-                  bzip2
-                  xz
-                  pkgs.perl
-                  boost
-                ]
-                ++ lib.optional (currentStdenv.isLinux || currentStdenv.isDarwin) libsodium
-                ++ lib.optional currentStdenv.isDarwin darwin.apple_sdk.frameworks.Security;
+              # buildInputs =
+              #   [ nix
+              #     curl
+              #     bzip2
+              #     xz
+              #     pkgs.perl
+              #     boost
+              #   ]
+              #   ++ lib.optional (currentStdenv.isLinux || currentStdenv.isDarwin) libsodium
+              #   ++ lib.optional currentStdenv.isDarwin darwin.apple_sdk.frameworks.Security;
 
-              configureFlags = [
-                "--with-dbi=${perlPackages.DBI}/${pkgs.perl.libPrefix}"
-                "--with-dbd-sqlite=${perlPackages.DBDSQLite}/${pkgs.perl.libPrefix}"
-              ];
+              # configureFlags = [
+              #   "--with-dbi=${perlPackages.DBI}/${pkgs.perl.libPrefix}"
+              #   "--with-dbd-sqlite=${perlPackages.DBDSQLite}/${pkgs.perl.libPrefix}"
+              # ];
 
-              enableParallelBuilding = true;
+              # enableParallelBuilding = true;
 
-              postUnpack = "sourceRoot=$sourceRoot/perl";
-            });
+              # postUnpack = "sourceRoot=$sourceRoot/perl";
+            # });
 
             meta.platforms = lib.platforms.unix;
           });
@@ -587,7 +587,7 @@
         );
 
         # Perl bindings for various platforms.
-        perlBindings = forAllSystems (system: nixpkgsFor.${system}.native.nix.perl-bindings);
+        # perlBindings = forAllSystems (system: nixpkgsFor.${system}.native.nix.perl-bindings);
 
         # Binary tarball for various platforms, containing a Nix store
         # with the closure of 'nix' package, and the second half of
@@ -735,7 +735,7 @@
 
       checks = forAllSystems (system: {
         binaryTarball = self.hydraJobs.binaryTarball.${system};
-        perlBindings = self.hydraJobs.perlBindings.${system};
+        # perlBindings = self.hydraJobs.perlBindings.${system};
         installTests = self.hydraJobs.installTests.${system};
         nixpkgsLibTests = self.hydraJobs.tests.nixpkgsLibTests.${system};
       } // (lib.optionalAttrs (builtins.elem system linux64BitSystems)) {

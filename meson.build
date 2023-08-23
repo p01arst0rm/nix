@@ -233,7 +233,7 @@ project_dirs = [
     'nix',
     # 'scripts',
     # 'misc',
-    # 'tests',
+    'tests',
 ]
 
 

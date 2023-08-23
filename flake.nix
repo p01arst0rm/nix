@@ -287,13 +287,13 @@
 
         VERSION_SUFFIX = versionSuffix;
 
-        nativeBuildInputs = nativeBuildDeps;
-        buildInputs = buildDeps ++ awsDeps ++ checkDeps;
+        nativeBuildInputs = nativeMesonDeps;
+        buildInputs = mesonDeps ++ awsDeps ++ checkDeps;
         propagatedBuildInputs = propagatedDeps;
 
         enableParallelBuilding = true;
 
-        configureFlags = testConfigureFlags; # otherwise configure fails
+        mesonFlags = testMesonFlags; # otherwise configure fails
         dontBuild = true;
         doInstallCheck = true;
 
@@ -301,7 +301,6 @@
           mkdir -p $out
         '';
 
-        installCheckPhase = "make installcheck -j$NIX_BUILD_CORES -l$NIX_BUILD_CORES";
       };
 
       binaryTarball = nix: pkgs:

@@ -5,8 +5,8 @@
 
 #include <derived-path.hh>
 
-#include "tests/path.hh"
-#include "tests/outputs-spec.hh"
+#include "test/path.hh"
+#include "test/outputs-spec.hh"
 
 namespace rc {
 using namespace nix;

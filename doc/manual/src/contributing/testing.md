@@ -32,11 +32,15 @@ The unit tests are defined using the [googletest] and [rapidcheck] frameworks.
 > │   ├── value/context.cc
 > │   │
 > │   …
->     └── tests
-> │       ├── value/context.hh
-> │       ├── value/context.cc
-> │       │
-> │       …
+> │
+> ├── libexpr-tests
+> │   ├── test/
+> │   │   ├── value/context.hh
+> │   │   │
+> │   │   …
+> │   ├── value/context.cc
+> │   │
+> │   …
 > │
 > ├── unit-test-data
 > │   ├── libstore
@@ -46,7 +50,12 @@ The unit tests are defined using the [googletest] and [rapidcheck] frameworks.
 > …
 > ```
 
-The unit tests for each Nix library (`libnixexpr`, `libnixstore`, etc..) live inside a directory `src/${library_shortname}/tests` within the directory for the library (`src/${library_shortname}`).
+The tests for each Nix library (`libnixexpr`, `libnixstore`, etc..) live inside a directory `src/${library_name_without-nix}-tests` next to the directory for the library (`src/${library_name_without-nix}`).
+Given a interface (header) and implementation pair in the original library, say, `libexpr/value/context.{hh,cc}`, we write tests for it in `libexpr-tests/value/context.cc`, and (possibly) declare additional interfaces for testing purposes in `libexpr-tests/test/value/context.hh`.
+
+> **Note**
+>
+> Only the extra header is nested inside the `test` directory. This is explained further below.
 
 The data is in `unit-test-data`, with one subdir per library, with the same name as where the code goes.
 For example, `libnixstore` code is in `src/libstore`, and its test data is in `unit-test-data/libstore`.
@@ -56,6 +65,27 @@ The path to the `unit-test-data` directory is passed to the unit test executable
 > Due to the way googletest works, downstream unit test executables will actually include and re-run upstream library tests.
 > Therefore it is important that the same value for `_NIX_TEST_UNIT_DATA` be used with the tests for each library.
 > That is why we have the test data nested within a single `unit-test-data` directory.
+
+### Rationale
+
+The use of a separate directory for the unit tests might seem inconvenient, as the tests are not "right next to" the part of the code they are testing.
+But organizing the tests this way has one big benefit:
+there is no risk of any build-system wildcards for the library accidentally picking up test code that shoud not built and installed as part of the library.
+
+Likewise, the use of the `test/` subdir might seem superfluous:
+Isn't the point of the `*-test` subdir to indicate that these files are tests?
+Why do we need another `test` subdirectory?
+The answer is that we need to be able to tell apart the two headers, and make sure we include the right one.
+For `.cc` files, this is matter of doing `#include "foo.hh"` vs `#include "test/foo.hh`
+For `.hh` files, this is a bit more subtle, because a `#include "foo.hh` instead `test/foo.hh` will end up including itself because `#include "..."`
+[always prioritizes files in the same directory](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/c99.html#tag_20_11_04), rather than the original header from the library.
+Instead, use `#include <foo.hh>` to get the original library header, and `#include "test/foo.hh"` to get the test header.
+
+Why do we have test headers at all?
+These are usually for [rapidcheck]'s `Arbitrary` machinery, which is used to describe how to generate values of a given type for the sake of running property tests.
+Because types contain other types, `Arbitrary` "instances" for some type are not just useful for testing that type, but also any other type that contains it.
+Indeed, if we don't reuse the upstream type's `Arbitrary` instance, the downstream type's `Arbitrary` instance would become much more complex and hard to understand.
+In order to reuse these instances, we therefore declare them in these testing headers.
 
 ### Running tests
 

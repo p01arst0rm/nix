@@ -4,9 +4,9 @@
 #include <gtest/gtest.h>
 #include <rapidcheck/gtest.h>
 
-#include <hash.hh>
+#include "hash.hh"
 
-#include "tests/hash.hh"
+#include "test/hash.hh"
 
 namespace nix {
 

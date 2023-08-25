@@ -39,17 +39,21 @@ INPUT                  = \
   src/libcmd \
   src/libexpr \
   src/libexpr/flake \
-  src/libexpr/tests \
-  src/libexpr/tests/value \
+  src/libexpr-tests \
+  src/libexpr-tests/value \
+  src/libexpr-tests/test \
+  src/libexpr-tests/test/value \
   src/libexpr/value \
   src/libfetchers \
   src/libmain \
   src/libstore \
   src/libstore/build \
   src/libstore/builtins \
-  src/libstore/tests \
+  src/libstore-tests \
+  src/libstore-tests/test \
   src/libutil \
-  src/libutil/tests \
+  src/libutil-tests \
+  src/libutil-tests/test \
   src/nix \
   src/nix-env \
   src/nix-store

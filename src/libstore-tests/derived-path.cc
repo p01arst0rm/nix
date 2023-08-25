@@ -4,8 +4,8 @@
 #include <gtest/gtest.h>
 #include <rapidcheck/gtest.h>
 
-#include "tests/derived-path.hh"
-#include "tests/libstore.hh"
+#include "test/derived-path.hh"
+#include "test/libstore.hh"
 
 namespace rc {
 using namespace nix;

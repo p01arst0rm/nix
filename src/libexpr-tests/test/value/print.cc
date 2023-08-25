@@ -1,4 +1,4 @@
-#include "tests/libexpr.hh"
+#include "test/libexpr.hh"
 
 #include "value.hh"
 

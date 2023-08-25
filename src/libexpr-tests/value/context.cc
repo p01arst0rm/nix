@@ -2,9 +2,9 @@
 #include <gtest/gtest.h>
 #include <rapidcheck/gtest.h>
 
-#include "tests/path.hh"
-#include "tests/libexpr.hh"
-#include "tests/value/context.hh"
+#include "test/path.hh"
+#include "test/libexpr.hh"
+#include "test/value/context.hh"
 
 namespace nix {
 

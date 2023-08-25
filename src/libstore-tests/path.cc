@@ -7,9 +7,9 @@
 #include "path-regex.hh"
 #include "store-api.hh"
 
-#include "tests/hash.hh"
-#include "tests/libstore.hh"
-#include "tests/path.hh"
+#include "test/hash.hh"
+#include "test/libstore.hh"
+#include "test/path.hh"
 
 namespace nix {
 

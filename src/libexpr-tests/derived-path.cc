@@ -2,8 +2,8 @@
 #include <gtest/gtest.h>
 #include <rapidcheck/gtest.h>
 
-#include "tests/derived-path.hh"
-#include "tests/libexpr.hh"
+#include "test/derived-path.hh"
+#include "test/libexpr.hh"
 
 namespace nix {
 

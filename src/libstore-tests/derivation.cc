@@ -4,7 +4,7 @@
 #include "experimental-features.hh"
 #include "derivations.hh"
 
-#include "tests/libstore.hh"
+#include "test/libstore.hh"
 
 namespace nix {
 

@@ -24,9 +24,9 @@ makefiles = \
 ifeq ($(tests), yes)
 UNIT_TEST_ENV = _NIX_TEST_UNIT_DATA=unit-test-data
 makefiles += \
-  src/libutil/tests/local.mk \
-  src/libstore/tests/local.mk \
-  src/libexpr/tests/local.mk \
+  src/libutil-tests/local.mk \
+  src/libstore-tests/local.mk \
+  src/libexpr-tests/local.mk \
   tests/local.mk \
   tests/ca/local.mk \
   tests/dyn-drv/local.mk \

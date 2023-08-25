@@ -10,7 +10,7 @@
 #include "eval-inline.hh"
 #include "store-api.hh"
 
-#include "tests/libstore.hh"
+#include "test/libstore.hh"
 
 namespace nix {
     class LibExprTest : public LibStoreTest {

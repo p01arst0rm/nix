@@ -107,6 +107,11 @@ option(
     type : 'string',
     description : 'path of cat, mkdir, etc.')
 
+option(
+    'nix_perl',
+    type : 'feature',
+    value : 'true',
+    description : 'Build nix with nix-perl')
 
 # misc
 #============================================================================

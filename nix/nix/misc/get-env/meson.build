@@ -4,7 +4,7 @@
 
 env_sh = files('get-env.sh')
 
-nix_src += custom_target(
+get_env_hh = custom_target(
   'get-env.sh.gen.hh',
   output : 'get-env.sh.gen.hh',
   input : env_sh,

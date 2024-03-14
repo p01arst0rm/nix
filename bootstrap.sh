@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 
-export PKG_CONFIG_PATH "/usr/lib/pkgconfig/;/lib/pkgconfig/;/usr/share/pkgconfig/"
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig/;/lib/pkgconfig/;/usr/share/pkgconfig/"
 
 # Delete existing buildfiles
 #---------------------------------------------------
@@ -14,5 +14,5 @@ meson setup build -Dprefix="/usr"
 
 # Build nix
 #---------------------------------------------------
-# cd build
-# ninja
+cd build
+ninja

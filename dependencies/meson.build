@@ -12,7 +12,7 @@ required_dep_dirs = [
     'curl',
     'dl',
     'editline',
-    # 'lowdown',
+    'lowdown',
     'nlohmann-json',
     'openssl',
     'pthread',

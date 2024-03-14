@@ -173,7 +173,7 @@ libstore_cxx_args = [
     '-DNIX_BIN_DIR="@0@" '.format(bindir),
     '-DNIX_MAN_DIR="@0@" '.format(mandir),
     '-DSANDBOX_SHELL="@0@" '.format(get_option('sandbox_shell')),
-    '-DLSOF="@0@" '.format(lsof)]
+    '-DLSOF="@0@" '.format(lsof.full_path())]
 
 libstore_link_args = []
 

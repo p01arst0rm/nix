@@ -90,7 +90,6 @@ libexecdir = join_paths(prefix, get_option('libexecdir'))
 mandir = join_paths(prefix, get_option('mandir'))
 docdir = join_paths(prefix, get_option('docdir'))
 includedir = join_paths(prefix, get_option('includedir'))
-proj_inc = []
 
 # set nix directories
 #-------------------------------------------------
@@ -221,7 +220,7 @@ endif
 #============================================================================
 
 
-proj_inc += include_directories('.')
+proj_inc = [include_directories('.')]
 
 # build nix
 #---------------------------------------------------
@@ -233,7 +232,7 @@ project_dirs = [
     'nix',
     # 'scripts',
     # 'misc',
-    'tests',
+    # 'tests',
 ]
 
 

@@ -1,24 +1,12 @@
 # nix misc
 #============================================================================
 
-nix_src_inc = [include_directories('.')]
+nix_inc += include_directories('.')
 
-src_dirs = [
-    'build-remote',
-    'nix-build',
-    'nix-channel',
-    'nix-collect-garbage',
-    'nix-copy-closure',
-    'nix-env',
-    'nix-instantiate',
-    'nix-store',
-    'bin',
+nix_misc_dirs = [
+    'get-env',
 ]
 
-if sys_name == 'Darwin'
-  src_dirs += 'resolve-system-dependencies'
-endif
-
-foreach dir : src_dirs
+foreach dir : nix_misc_dirs
     subdir(dir)
 endforeach

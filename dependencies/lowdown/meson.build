@@ -8,4 +8,4 @@
 
 # Look for lowdown, a required dependency
 #--------------------------------------------------
-liblowdown_dep = cpp.find_library('lowdown')
+liblowdown_dep = dependency('lowdown')

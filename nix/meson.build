@@ -1,7 +1,7 @@
 # nix build file
 #============================================================================
 
-nix_src_inc = [include_directories('.')]
+proj_inc += include_directories('.')
 
 src_dirs = [
     'libutil',
@@ -9,12 +9,13 @@ src_dirs = [
     'libmain',
     'libfetchers',
     'libexpr',
-    # 'libcmd',
-    # 'nix',
+    'libcmd',
+    'nix',
 ]
 
-if get_option('nix_perl')
-    src_dirc += ['perl']
+# if get_option('nix_perl').allowed()
+#     src_dirs += ['perl']
+# endif
 
 foreach dir : src_dirs
     subdir(dir)

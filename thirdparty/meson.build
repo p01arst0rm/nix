@@ -4,7 +4,7 @@
 # nix build file
 #============================================================================
 
-nix_src_inc = [include_directories('.')]
+proj_inc += include_directories('.')
 
 src_dirs = [
   # 'nlohmann',

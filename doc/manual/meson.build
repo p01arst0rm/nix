@@ -1,3 +1,7 @@
+# Nix Manual build file
+#============================================================================
+
+
 doc_manual_inc = [include_directories('.')]
 doc_manual_dir =  meson.current_source_dir()
 
@@ -60,21 +64,7 @@ nix_generator_conf.set('coreutils', coreutils)
 # build
 #============================================================================
 
-# configure generate-manpage.nix.gen.hh
-#---------------------------------------------------
-generate_manpage_nix = custom_target(
-  'generate-manpage.nix',
-  output : 'generate-manpage.nix.gen.hh',
-  input : 'generate-manpage.nix',
-  command : [bash, '-c', gen_rheader, 'sh', '@OUTPUT@'])
 
-# configure utils.nix.gen.hh
-#---------------------------------------------------
-utils_nix = custom_target(
-  'utils.nix.gen.hh',
-  output : 'utils.nix.gen.hh',
-  input : 'utils.nix',
-  command : [bash, '-c', gen_rheader, 'sh', '@OUTPUT@'])
 
 # # install scripts
 # #---------------------------------------------------

@@ -61,7 +61,7 @@ option(
 option(
     'rapidcheck_dir',
     type : 'string',
-    value : '/usr/include',
+    value : '/usr/include/rapidcheck',
     description : 'path to rapidcheck')
 
 option(
@@ -110,7 +110,7 @@ option(
 option(
     'nix_perl',
     type : 'feature',
-    value : 'true',
+    value : 'enabled',
     description : 'Build nix with nix-perl')
 
 # misc

@@ -14,7 +14,6 @@ libperl_dep_list = []
 #============================================================================
 
 libperl_src = files(
-    'Config.pm.in',
     'CopyClosure.pm',
     'Manifest.pm',
     'SSH.pm',
@@ -31,8 +30,8 @@ libperl_store_xs = files('Store.xs')
 perl_conf = configuration_data()
 perl_conf.set('PACKAGE_VERSION', meson.project_version())
 
-configure_file(input : 'config.pm.in',
-               output : 'config.pm',
+configure_file(input : 'Config.pm.in',
+               output : 'Config.pm',
                configuration : perl_conf)
 
 
